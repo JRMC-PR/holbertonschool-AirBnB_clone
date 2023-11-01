@@ -13,7 +13,7 @@ class TestUser(unittest.TestCase):
         self.my_user.email = "airbnb@mail.com"
         self.my_user.password = "root"
 
-    def test_user(self):
+    def test_attributes(self):
         """Test the attributes of User"""
         self.assertEqual(self.my_user.first_name, "Betty")
         self.assertEqual(self.my_user.last_name, "Bar")

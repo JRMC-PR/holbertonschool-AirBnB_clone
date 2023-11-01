@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""This module defines the class State"""
+# & This module defines the class State
+
+# & Import the BaseModel class from the models.base_model module
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
     """This class defines a state by various attributes"""
-    # & Attributes
-    name = ""
+    # & Define the attributes of the State class
+    name = ""  # & The name of the state, initialized as an empty string

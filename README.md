@@ -18,3 +18,48 @@ etc).
 * Destroy an object.
 
 ## Program's Usage:
+
+To bring some context to the table, the file that
+allows us to manage cases is named **console.py**.
+
+*ALSO*, similar to our previous shell, there are two ways of execution to our program:
+
+**INTERACTIVE MODE**
+```
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb)
+(hbnb)
+(hbnb) quit
+$
+```
+
+
+**NON-INTERACTIVE**
+```
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+$
+```
+

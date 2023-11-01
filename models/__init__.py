@@ -2,7 +2,7 @@
 """This module creates a unique FileStorage instance for the application
 """
 from models.engine.file_storage import FileStorage
-# FileStorage instance
+# & FileStorage instance
 storage = FileStorage()
-# Reload objects
+# & Reload objects
 storage.reload()

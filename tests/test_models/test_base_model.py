@@ -4,6 +4,7 @@ import unittest
 from models.base_model import BaseModel
 from datetime import datetime
 
+
 class TestBaseModel(unittest.TestCase):
     def setUp(self):
         """Sets up testing environment"""
@@ -18,8 +19,10 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(my_model_dict['name'], "My First Model")
         self.assertEqual(my_model_dict['my_number'], 89)
         self.assertEqual(my_model_dict['__class__'], "BaseModel")
-        self.assertEqual(my_model_dict['created_at'], self.my_model.created_at.isoformat())
-        self.assertEqual(my_model_dict['updated_at'], self.my_model.updated_at.isoformat())
+        self.assertEqual(my_model_dict['created_at'],
+                         self.my_model.created_at.isoformat())
+        self.assertEqual(my_model_dict['updated_at'],
+                         self.my_model.updated_at.isoformat())
 
     def test_save(self):
         """Tests save method of BaseModel"""

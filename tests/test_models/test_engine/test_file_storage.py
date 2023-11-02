@@ -41,17 +41,17 @@ class TestFileStorage(unittest.TestCase):
 
     def test_new(self):
         """Test new method and save to dictionary"""
-        self.storage.new(self.obj)
-        key = self.obj.__class__.__name__ + "." + self.obj.id
-        self.assertIn(key, self.storage.all())
-        # m_storage = FileStorage()
-        # instances_dic = m_storage.all()
-        # Aman = User()
-        # Aman.id = 999999
-        # Aman.name = "Aman"
-        # m_storage.new(Aman)
-        # key = Aman.__class__.__name__ + "." + str(Aman.id)
-        # self.assertIsNotNone(instances_dic[key])
+        # self.storage.new(self.obj)
+        # key = self.obj.__class__.__name__ + "." + self.obj.id
+        # self.assertIn(key, self.storage.all())
+        m_storage = FileStorage()
+        instances_dic = m_storage.all()
+        Aman = User()
+        Aman.id = 999999
+        Aman.name = "Aman"
+        m_storage.new(Aman)
+        key = Aman.__class__.__name__ + "." + str(Aman.id)
+        self.assertIsNotNone(instances_dic[key])
 
     def test_save(self):
         """Test save method"""

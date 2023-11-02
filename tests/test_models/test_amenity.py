@@ -3,6 +3,7 @@
 import unittest
 from models.amenity import Amenity
 
+
 class TestAmenity(unittest.TestCase):
 
     def setUp(self):
@@ -13,6 +14,7 @@ class TestAmenity(unittest.TestCase):
     def test_attributes(self):
         """Test the attributes of Amenity"""
         self.assertEqual(self.my_amenity.name, "Pool")
+
 
 if __name__ == '__main__':
     unittest.main()

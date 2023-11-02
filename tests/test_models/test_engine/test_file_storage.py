@@ -24,11 +24,10 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsInstance(self.storage, FileStorage)
 
     def test_Access(self):
-        """Test access to private attributes"""
-        with self.assertRaises(AttributeError):
-            print(self.storage.__file_path)
-        with self.assertRaises(AttributeError):
-            print(self.storage.__objects)
+        """Test r-w-x access to file"""
+        self.assertTrue(os.access("models/engine/file_storage.py", os.R_OK))
+        self.assertTrue(os.access("models/engine/file_storage.py", os.W_OK))
+        self.assertFalse(os.access("models/engine/file_storage.py", os.X_OK))
 
     def test_all(self):
         """Test all method"""

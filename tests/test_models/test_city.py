@@ -3,6 +3,7 @@
 import unittest
 from models.city import City
 
+
 class TestCity(unittest.TestCase):
 
     def setUp(self):
@@ -15,6 +16,7 @@ class TestCity(unittest.TestCase):
         """Test the attributes of City"""
         self.assertEqual(self.my_city.state_id, "CA")
         self.assertEqual(self.my_city.name, "San Francisco")
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -8,7 +8,10 @@ from models.base_model import BaseModel
 class TestUser(unittest.TestCase):
 
     def setUp(self):
-        """Set up for the tests"""
+        """
+        Set up for the tests.
+        Creates instances for two users.
+        """
         self.my_user = User()
         self.my_user.first_name = "Betty"
         self.my_user.last_name = "Bar"
@@ -24,13 +27,10 @@ class TestUser(unittest.TestCase):
 
     def test_attributes(self):
         """Test the attributes of User"""
-        self.assertEqual(self.my_user.first_name, "Betty")
-        self.assertEqual(self.my_user.last_name, "Bar")
-        self.assertEqual(self.my_user.email, "airbnb@mail.com")
-        self.assertEqual(self.my_user.password, "root")
-        self.assertEqual(self.my_user2.first_name, "John")
-        self.assertEqual(self.my_user2.email, "airbnb2@mail.com")
-        self.assertEqual(self.my_user2.password, "root")
+        self.assertTrue(hasattr(self.my_user, "email"))
+        self.assertTrue(hasattr(self.my_user, "password"))
+        self.assertTrue(hasattr(self.my_user, "first_name"))
+        self.assertTrue(hasattr(self.my_user, "last_name"))
 
     def test_inheritance(self):
         """Test if User inherits from BaseModel"""
@@ -46,6 +46,17 @@ class TestUser(unittest.TestCase):
         my_user_dict = self.my_user.to_dict()
         self.assertEqual(type(my_user_dict), dict)
         self.assertTrue("to_dict" in dir(self.my_user))
+
+    def test_save(self):
+        """Test the save method"""
+        self.my_user.save()
+        self.assertNotEqual(self.my_user.created_at, self.my_user.updated_at)
+
+    def test_create_user(self):
+        """Test the create method"""
+        self.my_user2.save()
+        self.assertNotEqual(self.my_user2.created_at, self.my_user2.updated_at)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 import unittest
+import json
+import os
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 
@@ -12,6 +14,21 @@ class TestFileStorage(unittest.TestCase):
         self.storage = FileStorage()
         self.obj = BaseModel()
         self.obj.id = "123"
+
+    def tearDown(self) -> None:
+        """Tear down test environment"""
+        return super().tearDown()
+
+    def test_instantiation(self):
+        """Test instantiation of FileStorage class"""
+        self.assertIsInstance(self.storage, FileStorage)
+
+    def test_Access(self):
+        """Test access to private attributes"""
+        with self.assertRaises(AttributeError):
+            print(self.storage.__file_path)
+        with self.assertRaises(AttributeError):
+            print(self.storage.__objects)
 
     def test_all(self):
         """Test all method"""
@@ -39,6 +56,25 @@ class TestFileStorage(unittest.TestCase):
         self.storage.reload()
         key = self.obj.__class__.__name__ + "." + self.obj.id
         self.assertIn(key, self.storage.all())
+
+    def test_save_no_file(self):
+        """Test save method when the file does not exist"""
+        try:
+            os.remove(self.storage._FileStorage__file_path)
+        except FileNotFoundError:
+            pass
+        self.storage.new(self.obj)
+        self.storage.save()
+        key = self.obj.__class__.__name__ + "." + self.obj.id
+        with open(self.storage._FileStorage__file_path, "r") as f:
+            self.assertIn(key, f.read())
+
+    def test_reload_invalid_json(self):
+        """Test reload method with invalid JSON"""
+        with open(self.storage._FileStorage__file_path, "w") as f:
+            f.write("This is not valid JSON")
+        with self.assertRaises(json.JSONDecodeError):
+            self.storage.reload()
 
 
 if __name__ == '__main__':

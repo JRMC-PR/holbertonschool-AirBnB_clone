@@ -1,4 +1,4 @@
-# holbertonschool-AirBnB_clone
+# Holbertonschool-AirBnB_Clone
 
 ## AirBnb Console - Project's Intention
 
@@ -32,11 +32,9 @@ Use-cases our project will be able to manage:
 | What is \*\*kwargs and how to use it                               | `**kwargs` in Python is used to pass a variable number of keyworded arguments to a function. It allows you to pass any number of keyword arguments to the function.                                                                                                   |
 | How to handle named arguments in a function                        | Named arguments, also known as keyword arguments, are used in function calls. They allow the caller to specify the argument name along with its value, making it easier to understand what value is being passed for which function parameter.                        |
 
-## Program's Usage:
+# Program's Usage: `./console.py`
 
 ## Interactive Mode
-
-Your shell should work like this in interactive mode:
 
 ```bash
 $ ./console.py
@@ -46,37 +44,65 @@ Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
+(hbnb) all MyModel
+** class doesn't exist **
+(hbnb) show BaseModel
+** instance id missing **
+(hbnb) show BaseModel My_First_Model
+** no instance found **
+(hbnb) create BaseModel
+2f13f0f8-bb77-41e7-ba5a-21308e8aca38
+(hbnb) all BaseModel
+[BaseModel] (123) {'id': '123', 'created_at': datetime.datetime(2023, 11, 1, 16, 22, 1, 372753), 'updated_at': datetime.datetime(2023, 11, 1, 16, 22, 1, 372757)}
+[BaseModel] (2f13f0f8-bb77-41e7-ba5a-21308e8aca38) {'id': '2f13f0f8-bb77-41e7-ba5a-21308e8aca38', 'created_at': datetime.datetime(2023, 11, 2, 7, 50, 4, 191300), 'updated_at': datetime.datetime(2023, 11, 2, 7, 50, 4, 191353)}
+(hbnb) destroy
+** class name missing **
+(hbnb) update BaseModel 2f13f0f8-bb77-41e7-ba5a-21308e8aca38 first_name "Bety"
+(hbnb) show BaseModel 2f13f0f8-bb77-41e7-ba5a-21308e8aca38
+[BaseModel] (2f13f0f8-bb77-41e7-ba5a-21308e8aca38) {'id': '2f13f0f8-bb77-41e7-ba5a-21308e8aca38', 'created_at': datetime.datetime(2023, 11, 2, 7, 50, 4, 191300), 'updated_at': datetime.datetime(2023, 11, 2, 7, 50, 4, 191353), 'first_name': '"Bety"'}
+(hbnb) create BaseModel
+11ed04a1-a79a-48de-9d6b-f9cb099491ae
+(hbnb) all BaseModel
+[BaseModel] (123) {'id': '123', 'created_at': datetime.datetime(2023, 11, 1, 16, 22, 1, 372753), 'updated_at': datetime.datetime(2023, 11, 1, 16, 22, 1, 372757)}
+[BaseModel] (2f13f0f8-bb77-41e7-ba5a-21308e8aca38) {'id': '2f13f0f8-bb77-41e7-ba5a-21308e8aca38', 'created_at': datetime.datetime(2023, 11, 2, 7, 50, 4, 191300), 'updated_at': datetime.datetime(2023, 11, 2, 7, 50, 4, 191353), 'first_name': '"Bety"'}
+[BaseModel] (11ed04a1-a79a-48de-9d6b-f9cb099491ae) {'id': '11ed04a1-a79a-48de-9d6b-f9cb099491ae', 'created_at': datetime.datetime(2023, 11, 2, 7, 52, 45, 62503), 'updated_at': datetime.datetime(2023, 11, 2, 7, 52, 45, 62552)}
+(hbnb) destroy Basemodel 2f13f0f8-bb77-41e7-ba5a-21308e8aca38
+** class doesn't exist **
+(hbnb) destroy BaseModel 2f13f0f8-bb77-41e7-ba5a-21308e8aca38
+(hbnb) show BaseModel 2f13f0f8-bb77-41e7-ba5a-21308e8aca38
+** no instance found **
 (hbnb)
 (hbnb)
-(hbnb) quit
-$
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+
+(hbnb)
 ```
 
 ## Non-Interactive Mode
 
-```
-$ echo "help" | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb)
+```bash
+$ echo "create BaseModel" | ./console.py
+1234-1234-1234
 $
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb)
+$ echo "show BaseModel 1234-1234-1234" | ./console.py
+[BaseModel] (1234-1234-1234) {'id': '1234-1234-1234', 'created_at': '2023-11-01T16:22:01.372753', 'updated_at': '2023-11-01T16:22:01.372757'}
+$
+
+
+$ echo "destroy BaseModel 1234-1234-1234" | ./console.py
+$
+
+$ echo "all BaseModel" | ./console.py
+[]
 $
 ```
 
-## Project Structure
+# Project Structure:
 
 | File/Folder                      | Description                                                                           |
 | -------------------------------- | ------------------------------------------------------------------------------------- |
@@ -92,7 +118,7 @@ $
 | `test_save_reload_base_model.py` | Contains the unit tests for the `save` and `reload` methods of the `BaseModel` class. |
 | `test_save_reload_user.py`       | Contains the unit tests for the `save` and `reload` methods of the `User` class.      |
 
-## Models Structure
+## Models/:
 
 | File/Folder     | Description                                                                              |
 | --------------- | ---------------------------------------------------------------------------------------- |
@@ -107,7 +133,7 @@ $
 | `state.py`      | Contains the `State` class.                                                              |
 | `user.py`       | Contains the `User` class.                                                               |
 
-## Engine Structure
+## Engine/:
 
 | File/Folder       | Description                                                                                                        |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -115,14 +141,14 @@ $
 | `__init__.py`     | Makes the folder a Python module.                                                                                  |
 | `__pycache__/`    | This folder contains Python3 byte code files that are automatically generated by Python.                           |
 
-## Tests Structure
+## Tests/:
 
 | File/Folder    | Description                                                            |
 | -------------- | ---------------------------------------------------------------------- |
 | `__init__.py`  | Makes the folder a Python module.                                      |
 | `test_models/` | This folder contains all the unit tests for the models in the project. |
 
-## Test Models Structure
+## Test/Test_Models/:
 
 | File/Folder            | Description                                                                              |
 | ---------------------- | ---------------------------------------------------------------------------------------- |
@@ -132,15 +158,14 @@ $
 | `test_engine/`         | This folder contains all the unit tests for the engine in the project.                   |
 | `test_file_storage.py` | Contains the unit tests for the `FileStorage` class.                                     |
 
-## Test Engine Structure
-
-## Test Engine Structure
+## Test/Test_Models/Test_Engine/:
 
 | File/Folder            | Description                                          |
 | ---------------------- | ---------------------------------------------------- |
 | `__init__.py`          | Makes the folder a Python module.                    |
 | `test_file_storage.py` | Contains the unit tests for the `FileStorage` class. |
 
-```
+## Authors
 
-```
+|Jesús R. Méndez Cruz - [GitHub](https://github.com/JRMC-PR) / [LinkedIn](www.linkedin.com/in/jesús-méndez-068b8a27a) /[Email](jesus.rafael.mendez.cruz@gmail.com)|
+|Christian Rosario Torres - [GitHub](https://github.com/GreyLeaf23)|

@@ -20,3 +20,8 @@ class Place(BaseModel):
     longitude = 0.0  # & The longitude of the place's location, init as 0.0
     # & A list of IDs of the amenities the place offers, init as an empty list
     amenity_ids = []
+
+    def __str__(self):
+        """Returns the string representation of the User instance"""
+        # & Format: [<class name>] (<self.id>) <self.__dict__>
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"

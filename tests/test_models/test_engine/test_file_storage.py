@@ -58,7 +58,6 @@ class TestFileStorage(unittest.TestCase):
         old_updated_at = self.obj.updated_at
         self.storage.new(self.obj)
         self.storage.save()
-
         self.assertNotEqual(self.obj.updated_at, old_updated_at)
 
     # def test_save(self):

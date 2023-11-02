@@ -10,3 +10,8 @@ class City(BaseModel):
     # & Define the attributes of the City class
     state_id = ""  # & The ID of the state the city initialized as an empty str
     name = ""  # & The name of the city, initialized as an empty string
+
+    def __str__(self):
+        """Returns the string representation of the User instance"""
+        # & Format: [<class name>] (<self.id>) <self.__dict__>
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"

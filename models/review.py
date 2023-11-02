@@ -11,3 +11,8 @@ class Review(BaseModel):
     place_id = ""  # & The ID of the place , init as an empty str
     user_id = ""  # & The ID of the user , init as an empty str
     text = ""  # & The text of the review, initialized as an empty string
+
+    def __str__(self):
+        """Returns the string representation of the User instance"""
+        # & Format: [<class name>] (<self.id>) <self.__dict__>
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"

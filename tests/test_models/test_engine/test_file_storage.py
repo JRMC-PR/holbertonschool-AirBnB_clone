@@ -23,7 +23,7 @@ class TestFileStorage(unittest.TestCase):
 
     def tearDown(self) -> None:
         """Tear down test environment"""
-        return super().tearDown()
+        del self.storage
 
     def test_instantiation(self):
         """Test instantiation of FileStorage class"""

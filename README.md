@@ -117,6 +117,7 @@ $
 | `tests/`                         | This folder contains all the unit tests for the project.                              |
 | `test_save_reload_base_model.py` | Contains the unit tests for the `save` and `reload` methods of the `BaseModel` class. |
 | `test_save_reload_user.py`       | Contains the unit tests for the `save` and `reload` methods of the `User` class.      |
+| `.gitignore`                     | This file contains a list of files that should be ignored by git.                     |
 
 ## Models/:
 
@@ -168,4 +169,4 @@ $
 ## Authors
 
 |Jesús R. Méndez Cruz - [GitHub](https://github.com/JRMC-PR) / [LinkedIn](www.linkedin.com/in/jesús-méndez-068b8a27a) /[Email](jesus.rafael.mendez.cruz@gmail.com)|
-|Christian Rosario Torres - [GitHub](https://github.com/GreyLeaf23)|
+|Christian Rosario Torres - [GitHub](https://github.com/GreyLeaf23)| / [LinkedIn](https://www.linkedin.com/in/christian-rosario-8b9554282/)| / [Email](productive.RT6512!@gmail.com)|

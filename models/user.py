@@ -8,7 +8,7 @@ from models.base_model import BaseModel
 class User(BaseModel):
     """This class defines a user by various attributes"""
     # & Define the attributes of the User class
-    email: str = ""  # & The email of the user, initialized as an empty string
-    password: str = ""  # & The password of the user, initialized as an empty string
-    first_name: str = ""  # & The first name of the user, init as an empty string
-    last_name: str = ""  # & The last name of the user, init as an empty string
+    email = ""  # & The email of the user, initialized as an empty string
+    password = ""  # & The password of the user, initialized as an empty string
+    first_name = ""  # & The first name of the user, init as an empty string
+    last_name = ""  # & The last name of the user, init as an empty string

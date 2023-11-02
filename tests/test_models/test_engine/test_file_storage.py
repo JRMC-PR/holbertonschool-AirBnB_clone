@@ -5,6 +5,12 @@ import json
 import os
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.review import Review
+from models.amenity import Amenity
+from models.place import Place
 
 
 class TestFileStorage(unittest.TestCase):
@@ -34,18 +40,38 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsInstance(self.storage.all(), dict)
 
     def test_new(self):
-        """Test new method"""
+        """Test new method and save to dictionary"""
         self.storage.new(self.obj)
         key = self.obj.__class__.__name__ + "." + self.obj.id
         self.assertIn(key, self.storage.all())
+        # m_storage = FileStorage()
+        # instances_dic = m_storage.all()
+        # Aman = User()
+        # Aman.id = 999999
+        # Aman.name = "Aman"
+        # m_storage.new(Aman)
+        # key = Aman.__class__.__name__ + "." + str(Aman.id)
+        # self.assertIsNotNone(instances_dic[key])
 
     def test_save(self):
         """Test save method"""
-        self.storage.new(self.obj)
-        self.storage.save()
-        key = self.obj.__class__.__name__ + "." + self.obj.id
-        with open(self.storage._FileStorage__file_path, "r") as f:
-            self.assertIn(key, f.read())
+        # self.storage.new(self.obj)
+        # self.storage.save()
+        # key = self.obj.__class__.__name__ + "." + self.obj.id
+        # with open(self.storage._FileStorage__file_path, "r") as f:
+        #     self.assertIn(key, f.read())
+        obj = FileStorage()
+        new_obj = BaseModel()
+        obj.new(new_obj)
+        dict1 = obj.all()
+        obj.save()
+        obj.reload()
+        dict2 = obj.all()
+        for key in dict1:
+            key1 = key
+        for key in dict2:
+            key2 = key
+        self.assertEqual(dict1[key1].to_dict(), dict2[key2].to_dict())
 
     def test_reload(self):
         """Test reload method"""

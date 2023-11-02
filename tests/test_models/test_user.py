@@ -8,7 +8,10 @@ from models.base_model import BaseModel
 class TestUser(unittest.TestCase):
 
     def setUp(self):
-        """Set up for the tests"""
+        """
+        Set up for the tests.
+        Creates instances for two users.
+        """
         self.my_user = User()
         self.my_user.first_name = "Betty"
         self.my_user.last_name = "Bar"
@@ -48,6 +51,12 @@ class TestUser(unittest.TestCase):
         """Test the save method"""
         self.my_user.save()
         self.assertNotEqual(self.my_user.created_at, self.my_user.updated_at)
+
+    def test_create_user(self):
+        """Test the create method"""
+        self.my_user2.save()
+        self.assertNotEqual(self.my_user2.created_at, self.my_user2.updated_at)
+
 
 if __name__ == '__main__':
     unittest.main()

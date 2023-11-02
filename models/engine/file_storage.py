@@ -2,6 +2,7 @@
 """This module defines the FileStorage class"""
 # & Import necessary modules
 import json
+from datetime import datetime
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -44,6 +45,8 @@ class FileStorage:
         # & Open the file and dump the objects as JSON
         with open(self.__file_path, "w") as f:
             for key, obj in self.__objects.items():
+                # & update updated_at
+                obj.updated_at = datetime.now()
                 temp_dict[key] = obj.to_dict()
             json.dump(temp_dict, f)
 

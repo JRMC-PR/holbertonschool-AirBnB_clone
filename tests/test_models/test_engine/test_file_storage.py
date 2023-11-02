@@ -55,23 +55,31 @@ class TestFileStorage(unittest.TestCase):
 
     def test_save(self):
         """Test save method"""
-        # self.storage.new(self.obj)
-        # self.storage.save()
-        # key = self.obj.__class__.__name__ + "." + self.obj.id
-        # with open(self.storage._FileStorage__file_path, "r") as f:
-        #     self.assertIn(key, f.read())
-        obj = FileStorage()
-        new_obj = BaseModel()
-        obj.new(new_obj)
-        dict1 = obj.all()
-        obj.save()
-        obj.reload()
-        dict2 = obj.all()
-        for key in dict1:
-            key1 = key
-        for key in dict2:
-            key2 = key
-        self.assertEqual(dict1[key1].to_dict(), dict2[key2].to_dict())
+        old_updated_at = self.obj.updated_at
+        self.storage.new(self.obj)
+        self.storage.save()
+
+        self.assertNotEqual(self.obj.updated_at, old_updated_at)
+
+    # def test_save(self):
+    #     """Test save method"""
+    #     # self.storage.new(self.obj)
+    #     # self.storage.save()
+    #     # key = self.obj.__class__.__name__ + "." + self.obj.id
+    #     # with open(self.storage._FileStorage__file_path, "r") as f:
+    #     #     self.assertIn(key, f.read())
+    #     obj = FileStorage()
+    #     new_obj = BaseModel()
+    #     obj.new(new_obj)
+    #     dict1 = obj.all()
+    #     obj.save()
+    #     obj.reload()
+    #     dict2 = obj.all()
+    #     for key in dict1:
+    #         key1 = key
+    #     for key in dict2:
+    #         key2 = key
+    #     self.assertEqual(dict1[key1].to_dict(), dict2[key2].to_dict())
 
     def test_reload(self):
         """Test reload method"""

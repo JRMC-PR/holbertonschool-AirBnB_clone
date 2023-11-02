@@ -49,7 +49,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         # & Check if the class exists
-        elif arg not in globals():
+        elif arg not in globals() or not \
+                issubclass(globals()[arg], BaseModel):
             print("** class doesn't exist **")
             return
         else:

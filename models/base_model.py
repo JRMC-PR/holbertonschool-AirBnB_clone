@@ -8,7 +8,9 @@ import models
 
 
 class BaseModel:
-    """A base class for all hbnb models"""
+    """A base class for all hbnb models
+    that defines all common attributes/methods
+    for other classes"""
     # & Initialize a new BaseModel
 
     def __init__(self, *args, **kwargs):

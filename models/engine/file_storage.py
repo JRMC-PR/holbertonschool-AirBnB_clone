@@ -22,7 +22,8 @@ class FileStorage:
     # & Methods
 
     def all(self):
-        """Returns the dictionary __objects"""
+        """Returns the dictionary __objects
+        that contains all objects"""
         # & Return all objects
         return self.__objects
 
@@ -38,16 +39,12 @@ class FileStorage:
         # & Create a temporary dictionary to store objects
         temp_dict = {}
 
-        # & Convert all objects to dictionaries
-        for key, obj in self.__objects.items():
-            temp_dict[key] = obj.to_dict()
-
         # & Open the file and dump the objects as JSON
         with open(self.__file_path, "w") as f:
             for key, obj in self.__objects.items():
-                # & update updated_at
-                obj.updated_at = datetime.now()
                 temp_dict[key] = obj.to_dict()
+                # & update updated_at
+            obj.updated_at = datetime.now()
             json.dump(temp_dict, f)
 
     def reload(self):

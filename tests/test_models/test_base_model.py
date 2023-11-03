@@ -61,9 +61,9 @@ class TestBaseModel(unittest.TestCase):
     def test_save(self):
         """Tests save method of BaseModel"""
         my_model = BaseModel()
-        old_updated_at = self.my_model.updated_at
-        self.my_model.save()
-        self.assertNotEqual(old_updated_at, self.my_model.updated_at)
+        old_updated_at = my_model.updated_at
+        my_model.save()
+        self.assertNotEqual(old_updated_at, my_model.updated_at)
 
     def test_id(self):
         """Tests id attribute of BaseModel"""

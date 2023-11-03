@@ -42,9 +42,9 @@ class FileStorage:
         # & Open the file and dump the objects as JSON
         with open(self.__file_path, "w") as f:
             for key, obj in self.__objects.items():
-                temp_dict[key] = obj.to_dict()
                 # & update updated_at
-            obj.updated_at = datetime.now()
+                obj.updated_at = datetime.now()
+                temp_dict[key] = obj.to_dict()
             json.dump(temp_dict, f)
 
     def reload(self):

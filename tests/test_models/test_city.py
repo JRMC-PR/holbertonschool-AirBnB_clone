@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Unitesst for City class"""
 import unittest
 from models.city import City
 

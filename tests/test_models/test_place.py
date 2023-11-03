@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Unitesst for Place class"""
 import unittest
 from models.base_model import BaseModel
 from models.place import Place

@@ -194,4 +194,4 @@ class HBNBCommand(cmd.Cmd):
 
 # & Start the command loop
 if __name__ == '__main__':
-    HBNBCommand().cmdloop()
+    HBNBCommand().cmdloop()  # & keeps clas in loop

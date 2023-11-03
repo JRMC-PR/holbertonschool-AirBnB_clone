@@ -13,7 +13,6 @@ class User(BaseModel):
     first_name = ""  # & The first name of the user, init as an empty string
     last_name = ""  # & The last name of the user, init as an empty string
 
-
     def __str__(self):
         """Returns the string representation of the User instance"""
         # & Format: [<class name>] (<self.id>) <self.__dict__>

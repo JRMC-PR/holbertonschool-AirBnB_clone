@@ -25,7 +25,7 @@ class TestState(unittest.TestCase):
     def test_attributes(self):
         """Test the attributes of State"""
         self.assertEqual(self.my_state.name, "California")
-        self.assertEquals(self.my_state2.name, "Alabama")
+        self.assertEqual(self.my_state2.name, "Alabama")
 
     def test_attributes_default(self):
         """ Test attributes default for State """

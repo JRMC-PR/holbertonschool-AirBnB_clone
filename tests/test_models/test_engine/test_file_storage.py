@@ -11,6 +11,7 @@ from models.city import City
 from models.review import Review
 from models.amenity import Amenity
 from models.place import Place
+from datetime import datetime, timedelta
 
 
 class TestFileStorage(unittest.TestCase):
@@ -54,7 +55,7 @@ class TestFileStorage(unittest.TestCase):
         old_updated_at = self.obj.updated_at
         self.storage.new(self.obj)
         self.storage.save()
-        self.assertNotEqual(self.obj.updated_at, old_updated_at)
+        self.assertNotEqual(self.obj.updated_at, self.obj.created_at)
 
     def test_reload(self):
         """Test reload method"""

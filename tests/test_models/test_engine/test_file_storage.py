@@ -55,9 +55,6 @@ class TestFileStorage(unittest.TestCase):
         self.storage.new(self.obj)
         self.storage.save()
         self.assertNotEqual(self.obj.updated_at, self.obj.created_at)
-        # key = self.obj.__class__.__name__ + "." + self.obj.id
-        # with open(self.storage._FileStorage__file_path, "r") as f:
-        #     self.assertIn(key, f.read())
 
     def test_reload(self):
         """Test reload method"""

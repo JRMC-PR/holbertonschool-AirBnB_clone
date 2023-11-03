@@ -63,7 +63,7 @@ class TestBaseModel(unittest.TestCase):
         my_model = BaseModel()
         old_updated_at = my_model.updated_at
         my_model.save()
-        self.assertNotEqual(old_updated_at, my_model.updated_at)
+        self.assertNotEqual(my_model.created_at, my_model.updated_at)
 
     def test_id(self):
         """Tests id attribute of BaseModel"""

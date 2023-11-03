@@ -25,12 +25,25 @@ class TestUser(unittest.TestCase):
         self.my_user2.password = "root"
         self.my_user2.save()
 
+        self.my_user3 = User()
+
+    def test_id(self):
+        """Test id """
+        self.assertNotEqual(self.my_user.id, self.my_user2.id)
+
     def test_attributes(self):
         """Test the attributes of User"""
         self.assertTrue(hasattr(self.my_user, "email"))
         self.assertTrue(hasattr(self.my_user, "password"))
         self.assertTrue(hasattr(self.my_user, "first_name"))
         self.assertTrue(hasattr(self.my_user, "last_name"))
+
+    def test_attributes_default(self):
+        """ Test attributes default for User """
+        self.assertEqual(self.my_user3.email, "")
+        self.assertEqual(self.my_user3.password, "")
+        self.assertEqual(self.my_user3.first_name, "")
+        self.assertEqual(self.my_user3.last_name, "")
 
     def test_inheritance(self):
         """Test if User inherits from BaseModel"""

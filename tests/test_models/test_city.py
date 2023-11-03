@@ -14,6 +14,11 @@ class TestCity(unittest.TestCase):
         # & Empty object
         self.city2 = City()
 
+    def tearDown(self):
+        """Tear down for tests"""
+        del self.my_city
+        del self.city2
+
     def test_attributes(self):
         """Test the attributes of City"""
         self.assertEqual(self.my_city.state_id, "CA")

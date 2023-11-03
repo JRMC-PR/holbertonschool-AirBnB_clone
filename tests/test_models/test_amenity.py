@@ -13,6 +13,11 @@ class TestAmenity(unittest.TestCase):
         # & Empty object
         self.amenity2 = Amenity()
 
+    def tearDown(self):
+        """Tear down for tests"""
+        del self.my_amenity
+        del self.amenity2
+
     def test_attributes(self):
         """Test the attributes of Amenity"""
         self.assertEqual(self.my_amenity.name, "Pool")

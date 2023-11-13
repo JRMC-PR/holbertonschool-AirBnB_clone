@@ -1,0 +1,10 @@
+The display: flex; property in CSS is used to create a flexible layout on a container element.
+It allows the child elements (flex items) to adjust their widths and heights to best fill the available space in the container.
+
+Here are some key features of a flex container:
+
+The flex container's child elements can be laid out in any direction and can have flexible growth and shrink factors.
+Flex items can be aligned both horizontally and vertically within the container.
+The order of flex items can be changed without affecting the source code order.
+In your code, display: flex; is used on the <footer> element to center the text both vertically and horizontally.
+ The align-items: center; property-value pair aligns the text vertically, and the justify-content: center; property-value pair aligns the text horizontally.

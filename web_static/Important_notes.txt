@@ -8,3 +8,12 @@ Flex items can be aligned both horizontally and vertically within the container.
 The order of flex items can be changed without affecting the source code order.
 In your code, display: flex; is used on the <footer> element to center the text both vertically and horizontally.
  The align-items: center; property-value pair aligns the text vertically, and the justify-content: center; property-value pair aligns the text horizontally.
+
+ The line border-bottom: 1px solid #CCCCCC; is a CSS declaration that adds a border to the bottom of an element.
+
+Here's what each part of the declaration means:
+
+border-bottom: This is the property that specifies the border on the bottom side of an element.
+1px: This is the width of the border. In this case, the border is 1 pixel wide.
+solid: This is the style of the border. It can be dotted, dashed, solid, double, groove, ridge, inset, outset, or none. In this case, the border is a solid line.
+#CCCCCC: This is the color of the border. It can be a color name, a hexadecimal color, an RGB color, or an HSL color. In this case, the color is a light gray specified by the hexadecimal color #CCCCCC.

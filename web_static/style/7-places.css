@@ -3,10 +3,7 @@
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
-    /* Centers items horizontally */
     justify-content: space-around;
-    /* Centers items vertically */
-    align-items: center;
 
 }
 
@@ -24,12 +21,12 @@ article {
     border: #FF5A5F 1px solid;
     border-radius: 4px;
     text-align: center;
-    margin: 10px;
     margin-top: 60px;
+    display: flex;
+
 }
 
 article h2 {
     font-size: 30px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
 }

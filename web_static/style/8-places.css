@@ -1,0 +1,117 @@
+.places {
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Centers items horizontally */
+    justify-content: space-around;
+    /* Centers items vertically */
+    align-items: center;
+    position: relative;
+
+}
+
+.places h1 {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 30px;
+}
+
+article {
+    width: 390px;
+    padding: 20px;
+    border: #FF5A5F 1px solid;
+    border-radius: 4px;
+    text-align: center;
+    margin: 10px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+article h2 {
+    font-size: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+}
+
+.price_by_night {
+    color: #FF5A5F;
+    border: 4px solid #FF5A5F;
+    border-radius: 50%;
+    min-width: 60px;
+    height: 60px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    float: right;
+}
+
+.information {
+    height: 80px;
+    border-top: #DDDDDD 1px solid;
+    border-bottom: #DDDDDD 1px solid;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+
+}
+
+.max_guest,
+.number_rooms,
+.number_bathrooms {
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.max_guest {
+    background-image: url('../images/guest.png');
+}
+
+.number_rooms {
+    background-image: url('../images/rooms.png');
+}
+
+.number_bathrooms {
+    background-image: url('../images/bathrooms.png');
+}
+
+/* .max_guest {
+    width: 100px;
+    background-image: url('../images/guest.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.max_guest p {
+    margin-bottom: auto;
+    bottom: 0;
+}
+
+.number_rooms {
+    width: 100px;
+    background-image: url('../images/rooms.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.number_bathrooms {
+    width: 100px;
+    background-image: url('../images/bathrooms.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+} */

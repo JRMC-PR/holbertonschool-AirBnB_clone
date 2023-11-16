@@ -3,11 +3,7 @@
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
-    /* Centers items horizontally */
     justify-content: space-around;
-    /* Centers items vertically */
-    align-items: center;
-    position: relative;
 
 }
 
@@ -25,19 +21,15 @@ article {
     border: #FF5A5F 1px solid;
     border-radius: 4px;
     text-align: center;
-    margin: 10px;
     margin-top: 60px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
 
 }
 
 article h2 {
     font-size: 30px;
-    margin-top: auto;
-    margin-bottom: auto;
-    align-items: center;
+    margin: auto;
 }
 
 .price_by_night {
@@ -57,25 +49,28 @@ article h2 {
 
 .information {
     height: 80px;
+    width: inherit;
     border-top: #DDDDDD 1px solid;
     border-bottom: #DDDDDD 1px solid;
-    margin-top: auto;
+    margin-top: 10px;
     margin-bottom: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: absolute;
-
 }
 
 .max_guest,
 .number_rooms,
 .number_bathrooms {
     width: 100px;
-    background-size: contain;
+    height: 70px;
+    background-size: auto;
     background-repeat: no-repeat;
+    background-position: center;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+    margin: auto;
+
 }
 
 .max_guest {
@@ -90,28 +85,11 @@ article h2 {
     background-image: url('../images/bathrooms.png');
 }
 
-/* .max_guest {
-    width: 100px;
-    background-image: url('../images/guest.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+.user {
+    margin-top: 20px;
+    text-align: left;
 }
 
-.max_guest p {
-    margin-bottom: auto;
-    bottom: 0;
+.description {
+    text-align: left;
 }
-
-.number_rooms {
-    width: 100px;
-    background-image: url('../images/rooms.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.number_bathrooms {
-    width: 100px;
-    background-image: url('../images/bathrooms.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-} */
